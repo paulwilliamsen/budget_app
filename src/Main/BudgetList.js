@@ -4,9 +4,7 @@ import BudgetDetail from './BudgetDetail'
 export default props => (
     <ul>
         {props.budgets.map(budget => (
-            <li key={budget.id}>
-                {budget.name}
-                </li>
+            <BudgetDetail key={budget.id} budget={budget} />
         ))}
     </ul>
 )
