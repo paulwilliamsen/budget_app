@@ -5,15 +5,29 @@ import Main from './Main/Main'
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      token: ''
+    }
+    this.onLogin = this.onLogin.bind(this);
+  }
+
+  onLogin(token) {
+    this.setState({
+      token
+    })
+  }
 
   render() {
+
     return (
       <div className="App">
-      {this.state.token ?
-      <Main />
-      :
-      <Landing onLogin={this.onLogin} />
-      }
+        {this.state.token ?
+          <Main token={this.state.token} />
+          :
+          <Landing onLogin={this.onLogin} />
+        }
       </div>
     );
   }
