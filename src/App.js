@@ -22,13 +22,13 @@ class App extends Component {
   render() {
 
     return (
-      // <div className="App">
-      // {this.state.token ?
-        // <Main token={this.state.token} />
-        // :
-        <Landing onLogin={this.onLogin} />
-      // }
-      // </div>
+      <div className="App">
+        {this.state.token ?
+          <Main token={this.state.token} />
+          :
+          <Landing onLogin={this.onLogin} />
+        }
+      </div>
     );
   }
 }
